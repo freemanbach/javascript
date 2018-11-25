@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="utf-8"/>
+ </head>
+<body>
+
+<h1>Web Example 1</h1>
+<p id="demo1"></p>
+
+<h1>Web Example 2</h1>
+<p id="demo2">Paragraph</p>
+<button type="button" onclick="display()">ClickMe</button>
+
+<h1>Web Example 3</h1>
+<p id="demo3"></p>
+
+<h1>Web Example 4</h1>
+<p id="demo4"></p>
+
+<h1>Web Example 5</h1>
+<p id="demo5"></p>
+
+<h1>Web Example 6</h1>
+<p id="demo6"></p>
+
+<h1>Web Example 7</h1>
+<p id="demo7"></p>
+
+<h1>Web Example 8</h1>
+<p id="demo8"></p>
+
+<h1>Web Example 9</h1>
+<p id="demo9"></p>
+
+<h1>Web Example 10</h1>
+<p id="demo10"></p>
+<button onclick=displayDate()>The time is?</button>
+<!-- <button onclick="this.innerHTML = Date()">The time is?</button> -->
+
+
+<br /><br />
+<button onclick="document.getElementById('demo11').innerHTML = getRndInteger(0,10)">Get Random</button>
+<p id="demo11"></p>
+
+
+<pre>
+<script type="text/javascript">
+document.getElementById("demo1").innerHTML = "First JavaScript";
+
+function display() {
+     document.getElementById("demo2").innerHTML = "Hello.";
+}
+
+// Avoid this is its all possible, testing only.
+// document.writeln(9 + 9);
+
+// Show windows Alert
+// window.alert(1 + 1);
+
+// this only works on the browser console.
+// console.log(5 + 6);
+
+//////////////////////////////////////////////////////////
+// JS Operators, VAriables, comments, syntax, assignment
+//////////////////////////////////////////////////////////
+
+ 
+ // Variables
+var x=3, y=2, z=1;   // Statement 1
+z = x + y;           // Statement 2
+
+
+/*   Multi-line comment */
+
+
+//////////////////////////////////////////////////////////
+// JS Assignment and Data Types
+//////////////////////////////////////////////////////////
+
+
+var personName = "Frodo";
+var personName = "Bilbo";
+
+var carName = "Ford";
+document.getElementById("demo3").innerHTML = carName + " " + personName; 
+
+var x = 5 + "2" + 3;
+document.getElementById("demo4").innerHTML = x;
+document.writeln("TESTTEST");
+document.writeln(x);
+
+var mess = "Finding hobbit"
+mess+= ", in Middle Earth."
+document.writeln(mess);
+var z = true;
+var a = 5;
+var b = "6" + 5
+var c = "hello Earth" + 90
+document.writeln(a);
+document.writeln(b);
+document.writeln(c);
+document.writeln("MESSAGE");
+document.writeln(typeof a);
+document.writeln(typeof mess);
+document.writeln(typeof z);
+
+//////////////////////////////////////////////////////////
+// JS  
+//////////////////////////////////////////////////////////
+document.writeln("HUMAN Object");
+var human = {firstName:"John", lastName:"Doe", eyecolor:"brown",height:"5,6",weight:"250",language:"english",food:"cheese"};
+document.writeln(typeof human);
+var cars=["audi","bmw","daewoo","ford","hyundai","infinity","subaru"]
+document.writeln(typeof cars);
+
+//////////////////////////////////////////////////////////
+// JS functions
+//////////////////////////////////////////////////////////
+
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}
+var temp = toCelsius(100);
+var text = "Your Converted temperature ist: " + temp + " Celsius";
+document.getElementById("demo5").innerHTML = text; 
+
+function dist(x2,x1,y2,y1) {
+   ans = Math.pow((x2-x1),2)+Math.pow((y2-y1),2);
+   total = Math.sqrt(ans);
+   return total;
+}
+
+var dis= dist(2,1,4,3);
+var solution = "Your Distance ist: " + dis + "";
+document.getElementById("demo6").innerHTML = solution; 
+var human = {firstName:"John", lastName:"Doe", eyecolor:"brown",height:"5,6",weight:"250",language:"english",food:"cheese"};
+document.getElementById("demo7").innerHTML = human.food; 
+document.getElementById("demo8").innerHTML = human["weight"]; 
+
+var person = {
+    firstName: "John",
+    lastName : "doe",
+    id       : 5566,
+    fullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// var fn = person.fullName;
+document.getElementById("demo9").innerHTML = person.fullName(); 
+
+function displayDate() {
+    document.getElementById("demo10").innerHTML = Date();
+}
+
+//////////////////////////////////////////////////////////
+// JS objects
+//////////////////////////////////////////////////////////
+document.writeln("JS Objects");
+var j = "john";
+
+var y = new String("John");
+document.writeln(j);
+document.writeln(y);
+
+//////////////////////////////////////////////////////////
+// JS String Type
+//////////////////////////////////////////////////////////
+document.writeln("String Types");
+document.writeln("Length is: ");
+var txt = "abcdefghij";
+var sln = txt.length;
+document.writeln(sln);
+
+var str = "Please locate where locate occurs!";
+var pos = str.indexOf("locate");
+document.writeln("first index of: " + pos);
+var pos = str.lastIndexOf("locate");
+document.writeln("Last index of: " + pos);
+var pos = str.search("locate");
+document.writeln("String Search: " + pos);
+/*
+    slice(start, end)
+    substring(start, end)
+    substr(start, length)
+	replace("word","replacewith")
+	toUpperCase()
+	toLowerCase()
+	concat()
+	trim()
+	
+*/
+
+
+//////////////////////////////////////////////////////////
+// JS Number types
+//////////////////////////////////////////////////////////
+document.writeln("Number Types");
+var myNumber = 32;
+myNumber.toString(10);  // returns 32
+myNumber.toString(32);  // returns 10
+myNumber.toString(16);  // returns 20
+myNumber.toString(8);   // returns 40
+myNumber.toString(2);   // returns 100000
+var y = new Number(123);
+
+var x = 500;             
+var y = new Number(500);
+
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000 
+
+var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600 
+
+//////////////////////////////////////////////////////////
+// JS Arrays
+//////////////////////////////////////////////////////////
+document.writeln("Arrays");
+var cars = new Array("Saab", "Volvo", "BMW");
+var cars = ["Acura","ford","subaru","volvo"];
+var len = cars.length;
+cars[0];
+
+text = "<ul>";
+for (i = 0; i < len; i++) {
+    text += "<li>" + cars[i] + "</li>";
+}
+text += "</ul>";
+
+/*
+push()
+pop()
+join()
+shift()
+concat()
+slice()
+sort()
+reverse()
+*/
+
+//////////////////////////////////////////////////////////
+// Index 
+//////////////////////////////////////////////////////////
+
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+document.writeln("Index of: ");
+document.writeln(a);
+
+//////////////////////////////////////////////////////////
+// Dates Constructor
+// new Date()
+// new Date(year, month, day, hours, minutes, seconds, milliseconds)
+// new Date(milliseconds)
+// new Date(date string)
+//////////////////////////////////////////////////////////
+var date1 = new Date();
+document.writeln(date1 + "One");    // oktober
+
+var date2 = new Date(2018, 9, 9, 10, 33, 30); // Oktober
+document.writeln(date2);
+
+var date3 = new Date(2018, 8,8); // September
+document.writeln(date3);
+
+var date4 = new Date("2018-12-10"); // dezember
+document.writeln(date4);
+
+var date5 = new Date("03/25/2018");  // march
+document.writeln(date5);
+
+
+var date6 = new Date();  
+document.writeln(date6.getMonth()+1);
+document.writeln(date6.getFullYear());
+document.writeln(date6.getDate());
+
+/*
+getFullYear();
+getMonth();
+getDate();
+getHour();
+getMinutes();
+getSeconds();
+getTime();
+getTime();
+Date.now();
+
+setDate();
+setFullyear();
+setHours();
+setMinutes();
+setMonth();
+setSesconds();
+setTime();
+*/
+
+
+//////////////////////////////////////////////////////////
+// Looping : FOR, WHILE
+//
+//////////////////////////////////////////////////////////
+var text = "";
+var i;
+for (i = 0; i < 5; i++) {
+    text = text+ "The number is " + i + "<br>";
+	document.writeln(text);
+	text = "";
+}
+
+
+var txt = "";
+var person = {fname:"John", lname:"Doe", age:25}; 
+var x;
+for (x in person) {
+    txt += person[x] + " ";
+	document.writeln(txt);
+	txt = "";
+}
+
+
+var text = "";
+var i = 0;
+while (i < 10) {
+    text += "<br>The number is " + i;
+	document.writeln(text);
+	text="";
+    i++;
+}
+
+
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+var i = 0;
+var text = "";
+
+for (;cars[i];) {
+    text += cars[i] + "<br>";
+	document.writeln(text);
+	text="";
+    i++;
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+var ran = Math.floor((Math.random() * 71)+1);
+document.writeln("Pseudo-Random Number");
+document.writeln(ran);
+
+text = "";
+for (i = 0; i < 5; i++) {
+    var num = Math.floor((Math.random() * 71)+1);
+	text += num + "  ";
+}
+document.writeln(text);
+
+var now = new Date();
+var num = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+document.writeln(num);
+
+document.writeln(now.getMonth());
+
+</script>
+</pre>
+</body>
+</html> 
