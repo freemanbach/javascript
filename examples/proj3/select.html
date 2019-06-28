@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<body ng-app="myApp">
+	<script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<select ng-model="selectedName" ng-options="x for x in names">
+		</select>
+
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+			$scope.names = ["Emil", "Tobias", "Linus"];
+		});
+	</script>
+
+</body>
+</html>

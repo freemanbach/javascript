@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<body ng-app="myApp">
+	<script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+
+
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Today's welcome message is:</p>
+		<h1>{{myWelcome}}</h1>
+
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope, $http) {
+			$http.get("welcome.htm")
+			.then(function(response) {
+				$scope.myWelcome = response.data;
+			});
+		});
+	</script>
+
+
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope, $http) {
+	$http.get("wrongfilename.htm")
+	.then(function(response) {
+	// First function handles success
+	$scope.content = response.data;
+}, function(response) {
+// Second function handles error
+$scope.content = "Something went wrong";
+});
+});
+
+
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+<ul>
+  <li ng-repeat="x in myData">
+    {{ x.Name + ', ' + x.Country }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("customers.php").then(function(response) {
+    $scope.myData = response.data.records;
+  });
+});
+</script>
+
+
+</body>
+</html>

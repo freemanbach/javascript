@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<body ng-app="myApp">
+	<script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+
+
+	<div ng-app="myApp" ng-controller="personCtrl">
+		<p>The name is {{ lastName | lowercase }}</p>
+	</div> 
+
+	<div ng-app="myApp" ng-controller="namesCtrl">
+
+		<ul>
+			<li ng-repeat="x in names | orderBy:'country'">
+				{{ x.name + ', ' + x.country }}
+			</li>
+		</ul>
+
+	</div> 
+
+	<div ng-app="myApp" ng-controller="costCtrl">
+		<h1>Price: {{ price | currency }}</h1>
+	</div> 
+
+	<div ng-app="myApp" ng-controller="namesCtrl">
+		<ul>
+			<li ng-repeat="x in names | filter : 'i'">
+				{{ x }}
+			</li>
+		</ul>
+	</div> 
+
+
+	<div ng-app="myApp" ng-controller="namesCtrl">
+
+		<table border="1" width="100%">
+			<tr>
+				<th ng-click="orderByMe('name')">Name</th>
+				<th ng-click="orderByMe('country')">Country</th>
+			</tr>
+			<tr ng-repeat="x in names | orderBy:myOrderBy">
+				<td>{{x.name}}</td>
+				<td>{{x.country}}</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<script>
+		angular.module('myApp', []).controller('namesCtrl', function($scope) {
+			$scope.names = [
+			{name:'Jani',country:'Norway'},
+			{name:'Carl',country:'Sweden'},
+			{name:'Margareth',country:'England'},
+			{name:'Hege',country:'Norway'},
+			{name:'Joe',country:'Denmark'},
+			{name:'Gustav',country:'Sweden'},
+			{name:'Birgit',country:'Denmark'},
+			{name:'Mary',country:'England'},
+			{name:'Kai',country:'Norway'}
+			];
+			$scope.orderByMe = function(x) {
+				$scope.myOrderBy = x;
+			}
+		});
+	</script> 
+
+</body>
+</html>
