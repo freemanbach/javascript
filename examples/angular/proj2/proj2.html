@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta chrset="UTF 8">
+    <meta chrset="utf-8">
     <title>Test Routing</title>
+</head>
+<body ng-app="myApp">
     <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
     <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
-</head>
-
-<body ng-app="myApp">
 
     <p><a href="#/!">Main</a></p>
 
@@ -15,40 +14,44 @@
     <a href="#!green">Green</a>
     <a href="#!blue">Blue</a>
 
-    <p>Note that Views.</p>
+    <p>Click links.</p>
+
+    <p>Note that variable mesg has a value.</p>
 
     <div ng-view></div>
 
     <script>
+        // page routing is so weird with ANgular
         var app = angular.module("myApp", ["ngRoute"]);
         app.config(function($routeProvider) {
-          $routeProvider
-          .when("/", {
-            templateUrl : "proj2.html",
-        })
-          .when("/red", {
-            templateUrl : "red.html",
-            controller  : "redCtrl"
-        })
-          .when("/green", {
-            templateUrl : "green.html",
-            controller  : "greenCtrl"
-        })
-          .when("/blue", {
-            templateUrl : "blue.html",
-            controller  : "blueCtrl"
+            $routeProvider
+            .when("/", {
+                templateUrl : "main.htm",
+            })
+            .when("/red", {
+                templateUrl : "red.htm",
+                controller : "redCtrl"
+            })
+            .when("/green", {
+                templateUrl : "green.htm",
+                controller : "greenCtrl"
+            })
+            .when("/blue", {
+                templateUrl : "blue.htm",
+                controller : "blueCtrl"
+            });
         });
-      });
 
         app.controller("redCtrl", function ($scope) {
-          $scope.msg = "Red is kool";
-      });
+            $scope.msg = "Kool";
+        });
         app.controller("greenCtrl", function ($scope) {
-          $scope.msg = "Green is Kooler";
-      });
+            $scope.msg = "Kooler";
+        });
         app.controller("blueCtrl", function ($scope) {
-          $scope.msg = "Blue is am Koolesten";
-      });
-  </script>
+            $scope.msg = "am Koolesten";
+        });
+
+    </script>
 </body>
 </html>
