@@ -4,48 +4,38 @@
     <meta chrset="UTF 8">
     <title>Event Registration</title>
 </head>
-    <script src="lib/angular-route.js"></script>
-    <script src="lib/angular.js"></script>
-    <script src="lib/bootstrap.js"></script>
-    <script src="lib/jquery.min.js"></script>
+<script src="lib/angular-route.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/jquery.min.js"></script>
 
-<body ng-app="sampleApp">
+<body ng-app="myApp">
 
-<h1> Guru99 Global Event</h1>
+    <p><a href="#/!">Main</a></p>
 
-<div class="container">
-    <ul><li><a href="#!NewEvent"> Add New Event</a></li>
-        <li><a href="#!DisplayEvent"> Display Event</a></li>
-    </ul>
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#!blue">Blue</a>
+
     <div ng-view></div>
-</div>
 
-<script>
-    var app = angular.module('sampleApp',["ngRoute"]);
-    app.config(function($routeProvider){
-        $routeProvider.
-        when("/NewEvent",{
-            templateUrl : "add_event.html",
-            controller: "AddEventController"
-        }).
-        when("/DisplayEvent", {
-            templateUrl: "show_event.html",
-            controller: "ShowDisplayController"
-        }).
-        otherwise ({
-            redirectTo: '/DisplayEvent'
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+          $routeProvider
+          .when("/", {
+            templateUrl : "proj2.html"
+        })
+          .when("/red", {
+            templateUrl : "red.html"
+        })
+          .when("/green", {
+            templateUrl : "green.html"
+        })
+          .when("/blue", {
+            templateUrl : "blue.html"
         });
-    });
-    app.controller("AddEventController", function($scope) {
-
-        $scope.message = "This is to Add a new Event";
-
-    });
-    app.controller("ShowDisplayController",function($scope){
-
-        $scope.message = "This is display an Event";
-
-    });
-</script>
+      });
+  </script>
 </body>
 </html>
