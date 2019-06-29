@@ -2,12 +2,10 @@
 <html>
 <head>
     <meta chrset="UTF 8">
-    <title>Event Registration</title>
+    <title>Test Routing</title>
+    <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
 </head>
-<script src="lib/angular-route.js"></script>
-<script src="lib/angular.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="lib/jquery.min.js"></script>
 
 <body ng-app="myApp">
 
@@ -17,6 +15,8 @@
     <a href="#!green">Green</a>
     <a href="#!blue">Blue</a>
 
+    <p>Note that Views.</p>
+
     <div ng-view></div>
 
     <script>
@@ -24,17 +24,30 @@
         app.config(function($routeProvider) {
           $routeProvider
           .when("/", {
-            templateUrl : "proj2.html"
+            templateUrl : "proj2.html",
         })
           .when("/red", {
-            templateUrl : "red.html"
+            templateUrl : "red.html",
+            controller  : "redCtrl"
         })
           .when("/green", {
-            templateUrl : "green.html"
+            templateUrl : "green.html",
+            controller  : "greenCtrl"
         })
           .when("/blue", {
-            templateUrl : "blue.html"
+            templateUrl : "blue.html",
+            controller  : "blueCtrl"
         });
+      });
+
+        app.controller("redCtrl", function ($scope) {
+          $scope.msg = "Red is kool";
+      });
+        app.controller("greenCtrl", function ($scope) {
+          $scope.msg = "Green is Kooler";
+      });
+        app.controller("blueCtrl", function ($scope) {
+          $scope.msg = "Blue is am Koolesten";
       });
   </script>
 </body>
