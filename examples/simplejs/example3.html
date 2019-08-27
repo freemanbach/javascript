@@ -1,0 +1,188 @@
+
+/******************************************************************
+Notes of JS
+******************************************************************/
+ // 6 data Types of JS
+ // dynamic typing, numbers, String, boolean, Array, Objects, 
+let d = new Date();
+// document.body.innerHTML = "<h1>Today's date is " + d + "</h1>";
+document.write("<h1>Today's date is " + d + "</h1>");
+
+
+name = prompt("What is your name? ");
+// document.body.innerHTML  = "<br /><h2>Your name is: " + name + "</h2>"
+document.write("Your name is: " + name);
+document.write("<br />Type of this variable is: " + typeof(name) + " <br /> Data has: " + name);
+
+
+//Date Object
+const now = new Date();
+console.log(now);
+document.write(now);
+
+
+// Constants
+const TAX_RATE = .55;
+const INSURANCE_RATE = .412;
+
+// Global Variable
+var myString = "THis is a String Type.";
+var myNum = 3.1415926;
+
+
+/*******************************************************************
+ * number for numbers of any kind: integer or floating-point.
+ * string for strings. A string may have one or more characters, there’s no separate single-character type.
+ * boolean for true/false.
+ * null for unknown values – a standalone type that has a single value null.
+ * undefined for unassigned values – a standalone type that has a single value undefined.
+ * object for more complex data structures.
+ * symbol for unique identifiers.
+ *******************************************************************/
+	
+	
+// Numbers
+//let t;              // t is undefined
+let val1 = 99;    // assign numerical value to val1
+let val2 = val1 + 2; // assign the sum of val1 + 2
+
+let val4 = NaN;
+let val5 = 37;
+let val6 = val4 + val5; 
+let val7 = 1/0; // infinity
+let val8 = -1/0; // negative infinity
+
+// Strings
+let val9 = "Teresa";            // t is a string
+let val10 = "Ocean" + 5 + 3;    // Ocean53
+let val11 =  5 + 3 + "Ocean";   // 8Ocean
+
+
+// 3 types of quotes
+let str = "Hello";
+let str2 = 'Single quotes are ok too';
+let str3 = `can embed ${str}`;
+
+// Boolean
+let t1 = true;       // t is a Boolean
+let t2 = false;       // t is a Boolean
+let myBool1 = 5 > 90;
+let myBool2 = 5 > 1;
+
+// Arrays
+let fish = ["stingray", "rockfish", "clownfish", "pufferfish"];
+
+// Objects
+const objectName = {};
+
+let bob = {
+    fName: "bob",
+    lName: "hobbit",
+    eyeColor: "blue",
+	hairColor: "green",
+	canDrive: true,
+	age:      25,
+    state: "MD"
+};
+
+// Initialize triangle object
+const triangle = {
+    type: "right",
+    angle: 90,
+    sides: 3
+};
+
+
+
+let val12 = 15;
+// Conditional statement written on one line
+if (val12 > 0 ) { 
+		/* execute code if true */ 
+	document.write("Your number is greater than zero: " + val12);
+	} 
+else { 
+		/* execute code if false */ 
+	document.write("Your number is less than zero: " + val12);
+	}
+
+// Conditional statement with indentation
+/*
+if (i === 1) {
+    // execute code if true
+} else {
+    // execute code if false
+}
+*/
+
+
+Math.floor(Math.random() * 11);  // 0-10
+Math.floor(Math.random() * 10) + 1;  // 1-10
+
+
+
+// Initialize a function to calculate the area of a square
+let val15 = 9;
+function square(val15) {
+    return Math.pow(val15, 2);
+}
+
+
+/* Initialize and invoke a the greetUser function
+to assign user's name to a constant and print out
+a greeting. */
+
+function greetUser() {
+    const name = prompt("What is your name?");
+    //console.log("Hello ," + name + "! How are you?");
+	document.write("Hello ," + name + "! How are you?");
+}
+
+//greetUser();
+
+
+/*******************************************************************
+ * Initialize constant with an array of strings.
+ * Loop through each item in the array and print
+ * it to the console.
+ *******************************************************************/
+document.write("<br />");
+document.write("<br />");
+document.write("<br />");
+const seaCreatures = ["Shark", "Fish", "Octopus"];
+for (const seaCreature of seaCreatures) {
+  //console.log(seaCreature);
+  document.write("Your sea creature is:" + seaCreature + "<br />");
+}
+
+document.write("<br />");
+document.write("<br />");
+document.write("<br />");
+
+
+// Function to add two numbers
+function addTwoNumbers(v1, v2) {
+  let sum = v1 + v2;
+  return sum;
+}
+
+// Function to multiply two numbers
+function multiplyTwoNumbers(v3, v4) {
+  let product = v3 * v4;
+  return product;
+}
+
+/*******************************************************************
+In this example, we're commenting out the addTwoNumbers
+function, therefore preventing it from executing. Only the
+multiplyTwoNumbers function will run 
+*******************************************************************/
+
+// addTwoNumbers(3, 5);
+let ans1 = multiplyTwoNumbers(5, 9);
+document.write("<br />");
+document.write("Your answer of mulp two numbers is: " + ans1);
+document.write("<br />");
+let ans2 = addTwoNumbers(1, 2);
+document.write("<br />");
+document.write("Your answer of adding two numbers is: " + ans2);
+document.write("<br />");
