@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Javascript Test">
+  <meta name="keywords" content="HTML,JavaScript">
+  <meta name="author" content="YOUR NAME">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Javascript test</title>
+</head>
+    
+<body onload="chkAgent()">
+    
+    
+    <h1>Example of JS Event 1</h1>
+<p>Select a new Month from the list. OnChange</p>
+
+    <select id="months" onchange="getMonth()">
+        <option value="Jan">one</option>
+        <option value="Feb">two</option>
+        <option value="Mar">three</option>
+        <option value="Apr">four</option>
+        <option value="May">five</option>
+        <option value="Jun">six</option>
+        <option value="Jul">seven</option>
+        <option value="Aug">eight</option>
+        <option value="Sep">nine</option>
+        <option value="Okt">ten</option>
+        <option value="Nov">eleven</option>
+        <option value="Dec">twelve</option>
+    </select>
+    <p id="test1"></p>
+<br />
+<br />
+
+    
+    <h1>Example of JS Event 2</h1>
+    
+    <p>demonstrates onmouseover event.</p>
+    <img id="test2" src="IMG_0669.JPG" onmouseover="m_over()" alt="image1" width="800px" height="600px" />
+    <br />
+    <br />
+    <p>demonstrate onmouseout event.</p>
+    <img id="test3" src="IMG_0669.JPG" onmouseout="m_out()" alt="image2" width="800px" height="600px" />
+
+    <br />
+    <br />
+    
+    <h1>Example of JS Event 3</h1>
+    <p>demonstrate the use of mouseup and mousedown</p>
+    <p onmousedown="m_down(this)" onmouseup="m_up(this)" 
+       style="background-color: #D94A38;
+              width:90px;
+              height:20px;
+              padding:40px;"> Try Me</p>
+    <br />
+    <br />
+    <h1> Example of JS Event 4</h1>
+    <p>Demostrate the use of onload</p>
+    <p id="test4"></p>
+    
+    <br />
+    <br />
+    <h1>Example of JS Event 4</h1>
+    <p>Autoplay and Controls with Audio</p>
+    <p id="test5"></p>
+
+    <audio id="jsbach" controls autoplay>
+        <source src="dvc1m_JSBach.mp3" type="audio/mpeg">
+        <source src="dvc1m_JSBach.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    
+<script>
+    
+    /*
+    function chkAudio() {
+        let x = document.getElementById("jsbach").autoplay;
+        document.getElementById("test5").innerHTML = x;
+    }
+    */
+    
+    function chkAgent() {
+        let agent="";
+        agent = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+        agent+= "<p>Browser Name: " + navigator.appName + "</p>";
+        agent+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+        agent+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+        agent+= "<p>Platform: " + navigator.platform + "</p>";
+        agent+= "<p>User-agent header: " + navigator.userAgent + "</p>";
+        document.getElementById("test4").innerHTML = agent;
+    }
+    
+    function m_down(obj) {
+        obj.style.backgroundColor = "#AAACCC";
+        obj.innerHTML = "YES";
+    }
+    
+    function m_up(obj) {
+        obj.style.backgroundColor="#F12345";
+        obj.innerHTML="NO";
+    }
+    
+    function m_over() {
+        //document.getElementById("test2").style.color = "red";
+        document.getElementById('test2').src = "IMG_0661.JPG";
+    }
+    
+    function m_out() {
+        //document.getElementById("test2").style.color = "black";
+        document.getElementById('test3').src = "img0661.jpg";
+    }
+    
+    function getMonth() {
+        let month = document.getElementById("months").value;
+        document.getElementById("test1").innerHTML = "You\'ve chosen: " + month;
+    }
+
+</script>
+</body>
+</html>
